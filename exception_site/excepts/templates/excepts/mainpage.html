@@ -1,0 +1,16 @@
+{% extends 'excepts/base.html' %}
+{% load static %}
+{% block content %}
+     <div class="GridWrapper">
+        <div class="text-wrap">
+            <h1>This project utilizes  <a href="https://stackoverflow.com/">Stackoverflow</a> API</h1>
+            <p>Try it by calling out different exceptions:</p>
+        </div>
+    </div>
+
+    <div class="container">
+        {% for e in list_of_exceptions %}
+            <div class="item"><button class="noselect" onclick="window.location.href ={% url e.url_name %}">{{e.title}}</button></div>
+        {% endfor %}
+    </div>
+{% endblock %}

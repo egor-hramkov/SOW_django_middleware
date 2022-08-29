@@ -1,0 +1,14 @@
+{% extends 'excepts/base.html' %}
+{% load static %}
+{% block content %}
+<div class="text-wrap">
+    <h1>Вызвана ошибка {{exception}}</h1>
+    <p>Возможные решения на Stackoverflow:</p>
+</div>
+<div class="answers">
+    {% for a in answers %}
+        <a href="{{a.link}}">{{a.title}}</a>
+    {% endfor  %}
+</div>
+
+{% endblock %}
